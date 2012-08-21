@@ -1,5 +1,5 @@
 html {
-  background-image: url("../images/yellow.jpg");
+  background-image: url("yello006.jpg");
   background-color: #E6E645;
 }
 
@@ -39,7 +39,7 @@ header {
   margin: 0 auto;
   height: 280px;
   width: 960px;
-  background-image: url("../images/yellow.jpg");
+  background-image: url("yello006.jpg");
   background-color: #E6E645;
 }
 
@@ -194,6 +194,7 @@ body {
   font-size: 13px;
   font-weight: normal;
   line-height: 20px;
+  font-family: 'Rosario', sans-serif;
 }
 
 #welcome {
