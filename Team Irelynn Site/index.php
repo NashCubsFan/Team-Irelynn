@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
 
-<title>Team Irelynn</title>
+<title>
+	<?php if (function_exists('is_tag') && is_tag()) {
+	single_tag_title('Tag Archive for &quot;'); echo '&quot; - ';
+	} elseif (is_archive()) {
+	wp_title(''); echo ' Archive - ';
+	} elseif (is_search()) {
+	echo 'Search for &quot;'.wp_specialchars($s).'&quot; - ';
+	} elseif (!(is_404()) && (is_single()) || (is_page())) {
+	wp_title(''); echo ' - ';
+	} elseif (is_404()) {
+	echo 'Not Found - ';
+	}
+	if (is_home()) {
+	bloginfo('name'); echo ' - '; bloginfo('description');
+	} else {
+	bloginfo('name');
+	}
+	if ($paged > 1) {
+	echo ' - page '. $paged;
+	} ?>
+</title>
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="orbit-1.2.3.css">
+<link rel='stylesheet' href='<?php bloginfo("style.css"); ?>'
+type='text/css' media='screen' />
+<link rel="stylesheet" href='<?php bloginfo("orbit-1.2.3.css")?>' type='text/css' media='screen' />
 <link href='http://fonts.googleapis.com/css?family=Rosario:400,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lora:700' rel='stylesheet' type='text/css'>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
