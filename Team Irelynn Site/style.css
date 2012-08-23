@@ -39,7 +39,7 @@ header {
   margin: 0 auto;
   height: 280px;
   width: 960px;
-  background-image: url("egg_shell.jpg");
+  background-image: url('/images/egg_shell.jpg');
   background-color: #E6E645;
 }
 
@@ -153,7 +153,7 @@ header {
       }
 
       .dropdown li + li {
-        border-top: 1px solid #eee;
+       border-top: 1px solid #eee;
       }
 
       .dropdown li a {

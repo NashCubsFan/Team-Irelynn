@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
 <head>
-
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
 <title>
 	<?php if (function_exists('is_tag') && is_tag()) {
 	single_tag_title('Tag Archive for &quot;'); echo '&quot; - ';
@@ -21,16 +22,17 @@
 	}
 	if ($paged > 1) {
 	echo ' - page '. $paged;
-	} ?>
+	} ?>	
 </title>
 
-<link rel='stylesheet' href='<?php bloginfo("style.css"); ?>'
-type='text/css' media='screen' />
-<link rel="stylesheet" href='<?php bloginfo("orbit-1.2.3.css")?>' type='text/css' media='screen' />
+<link rel='stylesheet' href='<?php get_stylesheet_uri(); ?>' type='text/css' media='screen' />
 <link href='http://fonts.googleapis.com/css?family=Rosario:400,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lora:700' rel='stylesheet' type='text/css'>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.orbit-1.2.3.min.js"></script> 
+<?php wp_enqueue_script('jquery'); ?>
+<link rel="stylesheet" href='<?php bloginfo("orbit-1.2.3.css")?>' type='text/css' media='screen' />
+<script type="text/javascript"
+src="<?php bloginfo('template_url');
+ ?>/jquery.orbit-1.2.3.min.js"></script>
 
 
   <script type="text/javascript">
@@ -39,51 +41,19 @@ type='text/css' media='screen' />
     });
   </script>
 
+<?php wp_head(); ?>
 </head>
 
-<header>
-  <nav>
-    <ul>
-      <li><a href="" class="icon home"><span>Home</span></a></li>
-      <li class="dropdown">
-        <a href="">Meet Irelynn</a>
-        <ul>
-          <li><a href="">tab</a></li>
-          <li><a href="">tab</a></li>
-          <li><a href="">tab</a></li>
-          <li><a href="">tab</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="">About DBA</a>
-        <ul class="large">
-          <li><a href="">tab</a></li>
-          <li><a href="i">tab</a></li>
-          <li><a href="">tab</a></li>
-          <li><a href="">tab</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a href="">Upcoming Events</a>
-        <ul class="large">
-          <li><a href="">tab</a></li>
-          <li><a href="">tab</a></li>
-          <li><a href="">tab</a></li>
-          <li><a href="">tab</a></li>
-        </ul>
-      </li>
-      <li><a href="">Links</a></li>
-      <li><a href="">DONATE NOW</a></li>
-    </ul>
-  </nav>
-
-  <div id="logo">
-    <img src="images/longlogo.png" id="long" />
-  </div>
-
-</header>
-
-<body>
+<body class="body">
+<style type="text/css">
+	.body {
+		background-image: url('<?php echo get_template_directory_uri(); ?>/images/egg_shell.jpg');
+	}
+	
+</style>
+	<header>
+		<?php get_header(); ?>
+	</header>
 
 <div id="welcome">
 
@@ -94,9 +64,9 @@ type='text/css' media='screen' />
   <div id="slider">
       <div id="featured"> 
         <!--<img src="images/poster.jpeg" id="poster" />-->
-        <img src="slidercliptwo.jpeg" class="slider"/>
-        <img src="sliderclipthree.jpeg" class="slider"/>
-        <img src="sliderclipfour.jpeg" class="slider"/>
+        <img class="slider" src="<?php bloginfo('template_url'); ?>/images/slidercliptwo.jpeg"/>
+        <img class="slider" src="<?php bloginfo('template_url'); ?>/images/sliderclipthree.jpeg" />
+        <img class="slider" src="<?php bloginfo('template_url'); ?>/images/sliderclipfour.jpeg" />
        <!-- <img src="sliderclipsix.png" class="slider"/>-->
       </div>
   </div>
@@ -129,8 +99,12 @@ type='text/css' media='screen' />
 
 </div>
 
+<footer>
+<?php get_footer(); ?>
+</footer>
+
 </body>
 
-<div id="footer">footer | foooter | footer | contact us | DONATE</div>
+<!--<div id="footer">footer | foooter | footer | contact us | DONATE</div>-->
 
 </html>
