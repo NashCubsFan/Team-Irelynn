@@ -24,36 +24,18 @@
 	echo ' - page '. $paged;
 	} ?>	
 </title>
-
 <link rel='stylesheet' href='<?php get_stylesheet_uri(); ?>' type='text/css' media='screen' />
 <link href='http://fonts.googleapis.com/css?family=Rosario:400,700italic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Lora:700' rel='stylesheet' type='text/css'>
-<?php wp_enqueue_script('jquery'); ?>
-<link rel="stylesheet" href='<?php bloginfo("orbit-1.2.3.css")?>' type='text/css' media='screen' />
-<script type="text/javascript"
-src="<?php bloginfo('template_url');
- ?>/jquery.orbit-1.2.3.min.js"></script>
-
-
-  <script type="text/javascript">
-    $(window).load(function() {
-      $('#featured').orbit();
-    });
-  </script>
 
 <?php wp_head(); ?>
+
 </head>
 
-<body class="body">
-<style type="text/css">
-	.body {
-		background-image: url('<?php echo get_template_directory_uri(); ?>/images/egg_shell.jpg');
-	}
-	
-</style>
-	<header>
-		<?php get_header(); ?>
-	</header>
+<body>
+  <div id="header"><!-- Header Begins Here -->  
+	<?php get_header(); ?>
+  </div>
 
 <div id="welcome">
 
@@ -81,28 +63,28 @@ src="<?php bloginfo('template_url');
     </div>
 
     <div class="boxes drop-shadow">
-	<article>
-      <h3>Upcoming Events</h3>
-      <h4>Next Blood Drive for Irelynn:</h4>
-      <p>August 24th, 2012</br>Lower Creek Baptist Church, Lenoir, NC</p>
-</article>
+      <h3 id="eventsheader">Upcoming Events</h3>
+	<div id="calendar" style="width:300px; text-align:center;" ><iframe  src="http://www.eventbrite.com/calendar-widget?eid=4218389316" frameborder="0" height="368" width="300" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true"></iframe><div id="eventtext" style="font-family:Helvetica, Arial; font-size:10px; padding:5px 0 5px; margin:2px; width:300px; text-align:center;" ><!--<a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com/r/ecal">Online Ticketing</a> <span style="color:#ddd;">powered by</span> <a style="color:#ddd; text-decoration:none;" target="_blank" href="http://www.eventbrite.com?ref=ecal">Eventbrite</a>--></div></div>
+      <!--<h4>Next Blood Drive for Irelynn:</h4>
+      <p>August 24th, 2012</br>Lower Creek Baptist Church, Lenoir, NC</p>-->
     </div>
 
     <div class="boxes drop-shadow">
-	<article>
       <h3 id="moreHeader">More About DBA</h3></br>
       <p><h4>Diamond Blackfan Anemia is an extremely rare genetic blood disorder afflicting our daughter Irelynn Rose</h4></p>
       <p>DBA is usually diagnosed within the first year of life and is characterized by the failure of the bone marrow to produce a sufficient number of oxygen carrying red blood cells.  Some DBA patients's anemia can be managed with steroid treatment, while others require frequent blood transfusions and iron chelation therapy.</p>
       <a href="" id="link">Learn More</a>
-	</article>
     </div>
 
 </div>
-
+<script type="text/javascript">
+   jQuery(window).load(function() {
+     jQuery('#featured').orbit();
+   });
+ </script>
 <footer>
 <?php get_footer(); ?>
 </footer>
-
 </body>
 
 <!--<div id="footer">footer | foooter | footer | contact us | DONATE</div>-->

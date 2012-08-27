@@ -1,3 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<?php wp_enqueue_script("jquery"); ?>
+	<?php wp_head(); ?>
+	
+	<link rel="stylesheet" href='<?php bloginfo('template_url'); ?>/orbit-1.2.3.css' type='text/css' media='screen' />
+	<script type="text/javascript"
+	   src="<?php bloginfo("template_url"); ?>/js/jquery.orbit-1.2.3.min.js"></script>
+	
+	
+</head>
+<body>
 <header>
   <nav>
     <ul>
@@ -39,3 +52,5 @@
   </div>
 
 </header>
+</body>
+</html>
